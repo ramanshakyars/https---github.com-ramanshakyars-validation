@@ -1,0 +1,31 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loaderService.isloading|async"></mat-progress-bar>
+<p *ngIf="loaderService.err |async" color="warn">page can not find</p>
+
+
+<div class="container">
+    <mat-card>
+        <mat-card-content class="heading">LOGIN HERE</mat-card-content>
+        <div  >
+            <mat-form-field class="example-full-width" id="name">
+                <mat-label>Enter your name</mat-label>
+                <input matInput placeholder="SSSSS" value="">
+              </mat-form-field>
+        </div>
+        <div >
+            <mat-form-field appearance="fill" class="pass">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+        </div>
+        <div class="btn">
+            <button mat-button color="accent" disabled="">REGISTER</button>
+            <button mat-button color="primary" enabled  (click)="onClick()">LOGIN</button>
+    
+    
+        </div>
+      </mat-card>
+</div>
+  
